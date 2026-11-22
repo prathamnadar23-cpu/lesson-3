@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Donation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 1px solid #dcdde1;
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #2980b9;
+            padding: 0 8px;
+        }
+
+        /* Block-level labels for text, password, date, select, and textarea */
+        .field-label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+
+        /* Inline spacing for radio buttons and checkboxes */
+        .option-group {
+            margin: 6px 0;
+        }
+
+        .option-group label {
+            margin-left: 6px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #219150;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Book Donation Form</h1>
+
+    <form>
+
+        <!-- PART 1: Donor Details -->
+        <fieldset>
+            <legend>Donor Details</legend>
+
+            <label class="field-label" for="donor-name">Your Name:</label>
+            <input type="text" id="donor-name" name="donor-name">
+
+            <label class="field-label" for="donor-id">Donor ID:</label>
+            <input type="password" id="donor-id" name="donor-id">
+
+            <label class="field-label" for="donation-date">Donation Date:</label>
+            <input type="date" id="donation-date" name="donation-date">
+        </fieldset>
+
+        <!-- PART 2 & 3: Book Details and Title or notes -->
+        <fieldset>
+            <legend>Book Details</legend>
+
+            <label class="field-label" for="book-category">Book Category:</label>
+            <select id="book-category" name="book-category">
+                <option value="fiction">Fiction</option>
+                <option value="science">Science</option>
+                <option value="history">History</option>
+                <option value="education">Education</option>
+            </select>
+
+            <label class="field-label">Book Condition:</label>
+            <div class="option-group">
+                <input type="radio" id="like-new" name="condition" value="like-new">
+                <label for="like-new">Like New</label>
+            </div>
+            <div class="option-group">
+                <input type="radio" id="good" name="condition" value="good">
+                <label for="good">Good</label>
+            </div>
+            <div class="option-group">
+                <input type="radio" id="used" name="condition" value="used">
+                <label for="used">Used</label>
+            </div>
+
+            <!-- PART 3: Title or notes -->
+            <label class="field-label" for="notes">Book Title or Notes:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+        </fieldset>
+
+        <!-- PART 4: Drop-off days and button -->
+        <fieldset>
+            <legend>Drop-Off Day</legend>
+
+            <div class="option-group">
+                <input type="checkbox" id="monday" name="dropoff-day" value="monday">
+                <label for="monday">Monday</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="wednesday" name="dropoff-day" value="wednesday">
+                <label for="wednesday">Wednesday</label>
+            </div>
+            <div class="option-group">
+                <input type="checkbox" id="friday" name="dropoff-day" value="friday">
+                <label for="friday">Friday</label>
+            </div>
+        </fieldset>
+
+        <button type="submit">Donate My Book</button>
+
+    </form>
+
+</body>
+
+</html>
