@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Appointment</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            color: #0277bd;
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 26px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        fieldset {
+            border: 1px solid #dce4ec;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: 600;
+            color: #0277bd;
+            padding: 0 8px;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label.block-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0288d1;
+            box-shadow: 0 0 0 3px rgba(2, 136, 209, 0.15);
+        }
+
+        .option-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .option-row {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #0288d1;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 13px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #01579b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏥 Doctor's Appointment</h1>
+        <p class="subtitle">Fill in the information below to schedule your visit.</p>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Personal Details</legend>
+
+                <div class="form-group">
+                    <label class="block-label" for="patient-name">Your Name</label>
+                    <input type="text" id="patient-name" name="patient_name" placeholder="Please enter your name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label class="block-label" for="patient-id">Patient ID</label>
+                    <input type="password" id="patient-id" name="patient_id" placeholder="Enter patient ID" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="block-label" for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Visit</legend>
+
+                <div class="form-group">
+                    <label class="block-label" for="doctor">Choose your doctor</label>
+                    <select id="doctor" name="doctor" required>
+                        <option value="">-- Select a doctor --</option>
+                        <option value="dr-ray">Dr. Ray - General</option>
+                        <option value="dr-lee">Dr. Lee - Dentist</option>
+                        <option value="dr-sam">Dr. Sam - Pediatrician</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="block-label">Why are you visiting?</label>
+                    <div class="option-list">
+                        <label class="option-item" for="fever">
+                            <input type="radio" id="fever" name="reason" value="fever"> Fever
+                        </label>
+                        <label class="option-item" for="toothache">
+                            <input type="radio" id="toothache" name="reason" value="toothache"> Toothache
+                        </label>
+                        <label class="option-item" for="checkup">
+                            <input type="radio" id="checkup" name="reason" value="checkup"> Check-up
+                        </label>
+                        <label class="option-item" for="cold">
+                            <input type="radio" id="cold" name="reason" value="cold"> Cold
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="block-label" for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="3"
+                        placeholder="e.g., I have had a sore throat for 2 days"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferred Day</legend>
+                <div class="option-row">
+                    <label class="option-item" for="mon">
+                        <input type="checkbox" id="mon" name="preferred_day" value="monday"> Monday
+                    </label>
+                    <label class="option-item" for="wed">
+                        <input type="checkbox" id="wed" name="preferred_day" value="wednesday"> Wednesday
+                    </label>
+                    <label class="option-item" for="fri">
+                        <input type="checkbox" id="fri" name="preferred_day" value="friday"> Friday
+                    </label>
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Book My Appointment">
+        </form>
+    </div>
+</body>
+
+</html>
